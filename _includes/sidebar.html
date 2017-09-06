@@ -1,0 +1,21 @@
+<aside class="col-md-3 col-sm-3 sidebar">
+
+    <ul class="sidenav dropable sticky sidebar-doc-syph">
+        <li>Documentation</li>
+        <li>
+            <a {% if page.menu == "m1"%}class="active"{% endif %} href="#">Getting started</a>
+            <ul>
+                {% for node in site.pages %}
+                    {% if node.menu == "m1" %}
+        				{% if page.url != '/404.html' %}
+                        <li>
+                            <a href="{{ node.url | prepend: site.baseurl }}" {% if page.url == node.url %}class="active"{% endif %}>{{ node.title }}</a>
+                        </li>
+        				{% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+
+</aside>

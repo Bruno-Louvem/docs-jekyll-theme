@@ -1,1 +1,18 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+{% include head.html %}
+
+<body>
+    {% include header.html %}
+    <main class="container">
+        <div class="row">
+            {% include sidebar.html %}
+            <article class="col-md-9 col-sm-9 main-content" role="main">
+                {{ content }}
+            </article>
+        </div>
+    </main>
+{% include footer.html %}
+</body>
+</html>
